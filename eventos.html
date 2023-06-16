@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+    </style>
+    <title>1865 Lincoln</title>
+</head>
+<body>
+    <nav class="topnav" id="myTopnav">
+        <div class="logo">
+            <a href="index.html"><img src="imagenes/1865.png" alt="Logo"></a>
+        </div>
+                <a href="menu.html">Menú</a>
+                <a href="eventos.html" class="active">Eventos</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="sobre1865.html">Sobre 1865</a>
+                <a href="registro.html">Registro</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i> 
+            </a>
+      </nav>  
+
+    <div class="carousel-container">
+        <div class="carousel-wrapper">
+        <div class="carousel-slide">
+            <img src="imagenes/merienda.jpeg" alt="Imagen 7">
+            <img src="imagenes/cookies.jpeg" alt="Imagen 8">
+            <img src="imagenes/tostado.jpeg" alt="Imagen 9">
+            <img src="imagenes/banner.jpeg" alt="Imagen 10">
+            <img src="imagenes/galletita2.jpg" alt="Imagen 11">
+            <img src="imagenes/yogur.jpg" alt="Imagen 12">
+            <img src="imagenes/mostrador.jpg" alt="Imagen 13">
+            <img src="imagenes/lincoln.jpg" alt="Imagen 14">
+        </div>
+        <div class="carousel-buttons">
+            <button class="prev-btn"> < </button>
+            <button class="next-btn"> > </button>
+        </div>
+        </div>
+    
+    <div class="separador2">
+        <h2>Pastelería Boutique  |  Cafetería Premium  |  Almacén de Especialidades</h2>
+    </div>  
+    
+    <section class="eventos">
+        <div class="columna">
+            <img src="imagenes/mesa.jpeg">
+            <h3>Reserva de mesas</h3>
+            <button class="boton_contacto">
+                <a href="contacto.html">Reservar</a>
+            </button>
+        </div>
+        <div class="columna">
+            <img src="imagenes/torta_entera.jpg">
+            <h3>Tortas enteras</h3>
+            <button class="boton_contacto">
+                <a href="contacto.html">Encargar</a>
+            </button>
+        </div>
+        <div class="columna">
+            <img src="imagenes/catering.jpeg">
+            <h3>Catering</h3>
+            <button class="boton_contacto">
+                <a href="contacto.html">Contactar</a>
+            </button>
+        </div>
+    </section>
+
+    <footer class="footer">
+    <section class="informacion">
+        <div class="columna">
+            <h3>Horario</h3>
+            <p>Martes a Domingo</p>
+            <p>8:00 am - 10:00 pm</p>
+        </div>
+        <div class="columna">
+            <a href="https://www.google.com/maps/place/1865+Lincoln/@-34.8690917,-61.5313359,15z/data=!4m6!3m5!1s0x95c7450ef7daf86b:0x472c6353be506dc6!8m2!3d-34.8690917!4d-61.5313359!16s%2Fg%2F11nn3_3hbh"><h3>Ubicación</h3></a>
+            <p>Av. Massey 1288</p>
+            <p>Lincoln, Buenos Aires</p>
+        </div>
+        <div class="columna">
+            <h3>Contacto</h3>
+            <p>Correo: info1865lincoln@gmail.com</p>
+        </div>
+    </section>
+    <section class="social-media">
+        <a href="https://www.facebook.com/people/1865-Lincoln/100067391047136/?paipv=0&eav=AfaZSXo_FJ0y4qsnTr4RMXky6tUaP50YXoYKiCojAaiKFRfDeicNgy-2t7-VcCw8H3Y&_rdr"><img src="imagenes/facebook.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/1865_lincoln/?hl=es"><img src="imagenes/instagram.png" alt="Instagram"></a>
+        <a href="https://api.whatsapp.com/send/?phone=5492355457418&text&type=phone_number&app_absent=0"><img src="imagenes/whatsapp.png" alt="WhatsApp"></a>
+        </div>
+    </section>
+    </footer>
+    <script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+document.querySelector('.next-btn').addEventListener('click', nextSlide);
+document.querySelector('.prev-btn').addEventListener('click', prevSlide);
+const carouselSlide = document.querySelector('.carousel-slide');
+const carouselImages = document.querySelectorAll('.carousel-slide img');
+
+let currentIndex = 0;
+const slideWidth = carouselImages[0].clientWidth;
+
+carouselSlide.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+
+function nextSlide() {
+if (currentIndex >= carouselImages.length - 1) {
+  currentIndex = 0;
+} else {
+  currentIndex++;
+}
+carouselSlide.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+}
+
+function prevSlide() {
+if (currentIndex <= 0) {
+  currentIndex = carouselImages.length - 1;
+} else {
+  currentIndex--;
+}
+carouselSlide.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+}
+
+document.querySelector('.next-btn').addEventListener('click', nextSlide);
+document.querySelector('.prev-btn').addEventListener('click', prevSlide);
+
+  </script>
+</body>
+</html>
